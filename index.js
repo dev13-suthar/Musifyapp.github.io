@@ -1,6 +1,6 @@
 console.log("helloo");
 let mainSongIndex = 0;
-let audioElement = new Audio('songs/1.mp3');
+let audioElement = new Audio('1.mp3');
 let masterPlay = document.getElementById("MasterPlay");
 let ProgBar = document.getElementById("mybar");
 let gif = document.getElementById("Play_gif");
@@ -12,11 +12,11 @@ let mastersong_coverimg = document.getElementById("img_song");
 
 // console.log(songitem);
 let songs = [
-    { songname: "on&on", filepath: "songs/1.mp3", cover: "imges/2.jpg" },
-    { songname: "Basti ka Hasti", filepath: "songs/2.mp3", cover: "imges/4.jpg" },
-    { songname: "Brown Munde", filepath: "songs/3.mp3", cover: "imges/5.jpg" },
-    { songname: "Barishe -Anuv Jain", filepath: "songs/4.mp3", cover: "imges/6.jpg" },
-    { songname: "unstopable", filepath: "songs/5.mp3", cover: "imges/2.jpg" },
+    { songname: "on&on", filepath: "1.mp3", cover: "2.jpg" },
+    { songname: "Basti ka Hasti", filepath: "2.mp3", cover: "4.jpg" },
+    { songname: "Brown Munde", filepath: "3.mp3", cover: "5.jpg" },
+    { songname: "Barishe -Anuv Jain", filepath: "4.mp3", cover: "6.jpg" },
+    { songname: "unstopable", filepath: "5.mp3", cover: "2.jpg" },
 ]
 
 
@@ -93,7 +93,7 @@ Array.from(document.getElementsByClassName('songitemplay')).forEach((element) =>
         let mainSongIndex = parseInt(e.target.id);
         e.target.classList.remove("fa-play");
         e.target.classList.add("fa-pause");
-        audioElement.src = `songs/${mainSongIndex+1}.mp3`;
+        audioElement.src = `${mainSongIndex+1}.mp3`;
         audioElement.currentTime = 0;
         song_main_name.innerText = songs[mainSongIndex].songname;
         masterPlay.classList.remove("fa-play-circle");
@@ -135,7 +135,7 @@ document.getElementById("next").addEventListener("click",()=>{
     }else{
         mainSongIndex+=1;
     }
-         audioElement.src = `songs/${mainSongIndex+1}.mp3`;
+         audioElement.src = `${mainSongIndex+1}.mp3`;
         audioElement.currentTime = 0;
         audioElement.play();
         song_main_name.innerText = songs[mainSongIndex].songname;
@@ -152,7 +152,7 @@ document.getElementById("prev").addEventListener("click",()=>{
     }else{
         mainSongIndex-=1;
     }
-    audioElement.src = `songs/${mainSongIndex+1}.mp3`;
+    audioElement.src = `${mainSongIndex+1}.mp3`;
         audioElement.currentTime = 0;
         audioElement.play();
         song_main_name.innerText = songs[mainSongIndex].songname;
@@ -181,7 +181,7 @@ setInterval(()=>{
     
     if (ProgBar.value==100) {
         mainSongIndex+=1;
-        audioElement.src = `songs/${mainSongIndex+1}.mp3`;
+        audioElement.src = `${mainSongIndex+1}.mp3`;
         audioElement.currentTime = 0;
         audioElement.play();
         song_main_name.innerText = songs[mainSongIndex].songname;
